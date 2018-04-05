@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--           @@
+              @@@
+             @@@@
+            @@@@@
+          ,@@ @@@
+         @@@  @@@
+       `@@@   @@@
+      +@@@    @@@
+     #@@@     @@@
+    +@@@      @@@    .
+    @@@       @@@   @@@@`
+   @@@@       @@@  `@@@@
+   @@@        @@@  +@@@             ,#@;
+   @@@        @@@  ,@@@           ;@@@@@@   '@@      .@#
+   @@@        @@@   @@+          #@@@@ #@   ,@@'    #@@@@
+   @@@    @# .@@@    @@;        ,@@@+ @`#@   @@@   #@@@@@     @
+   @@@    ;@ ,@@@     '@@@      @@@@  @  @   @@@  :@ @@@@     @
+   :@@    ;@ '@@@      @@@     `@@@`  @  @   @@@  @`.@@@+    :'
+    @@.   @@ @@@@     '@@@     +@@@   @  @. +@@@:@@ .@@@     @
+     @@  :@  @@@#     @@@@     @@@@   `@ @,@@@@@#@  .@@@     @
+      ,@@;   @@@.     @@@`     @@@@     @@@, @@@@@  .@@@    #+
+             @@@     .@@@     @@@@@      @   @@@@.   @@;    @
+ `@.        '@@@     .@@@    @@.@@@     #@   @@@@    @@    #@
+ @@         @@@      .@@;   @@  @@@     @    @@@@    @@    @
+ @@        ,@@@       @@   @@   `@@#   @,    +@@`    @@   @.
+ '@        @@@        @@'+@@      @@@@@`      @@      @+,@,
+  @@     `@@@          ,@'                    @@       @+
+   @@@;+@@@'
+     ;++;                                                      -->
+     {MobileAppHeaders}
+             <meta charset="utf-8">
+             <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+             {block:Description}
+             <meta name="description" content="{MetaDescription}">
+             {/block:Description}
+
+             {block:Hidden}
+             <meta name="if:Sliding header" content="1">
+             <meta name="if:Show navigation" content="1">
+             <meta name="if:Endless scrolling" content="1">
+             <meta name="if:Syntax highlighting" content="0">
+             <meta name="select:Layout" content="regular" title="Regular">
+             <meta name="select:Layout" content="narrow" title="Minimal">
+             <meta name="select:Layout" content="wide" title="Wide">
+             <meta name="select:Layout" content="grid" title="Grid">
+             <meta name="if:Related Posts" content="1">
+             <meta name="text:Disqus shortname" content="">
+             <meta name="text:Google analytics ID" content="">
+             {/block:Hidden}
+
+             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+             <meta name="theme-color" content="#35465D">
+             <link rel="shortcut icon" href="{Favicon}">
+             <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+             <link rel="alternate" type="application/rss+xml" href="{RSS}">
+             <link rel="stylesheet" href="#">
+             {block:IfSyntaxHighlighting}
+             <link rel="stylesheet" href="https://static.tumblr.com/ehm1tdz/2VWnye81h/tumblr-highlightjs.css">
+             {/block:IfSyntaxHighlighting}
+             {PostTypographyStyles}
+  <style>
+    /* basically CSS */
+    /* define Colors */
+    body {
+      background: {BackgroundColor};
+    }
+
+  </style>
+
+
+
+
+
+
+</head>
+<body>
+  <header id="header" class="top-blog-header">
+    {block:ShowHeaderImage}
+
+    </header>
+  <div>
+    <img class="avatr-image" src="{PortraitURL-64}"><h1>{TITLE}</h1>
+    <img id="twitter" src="#">
+    {block:Description}
+    <p id="description">{Description}</p>
+    {/block:Description}
+  </div>
+  <!--Define Posts-->
+  <ul id="posts">
+    {block:Posts} {block:Text}
+      <li class="post text">
+        {block:Title}
+          <h3><a href="{Permalink}">{Tilte}</a></h3>
+        {/block:Title} {Body}
+      </li>
+    {/block:Text} {block:Photo}
+      <li class="post photo">
+        <img src="{PhotoURL-500}" alt="{PhotoAlt}">
+
+        {block:Caption}
+          <div class="caption">{Caption}</div>
+        {/bock:Caption}
+      </li>
+    {/block:Photo} {block:Panorama}
+      <li class="post panorama">
+        {LinkOpenTag}
+          <img src="{PhotoURLPanorama}" alt="{PhotoAlt}">
+        {LinkCloseTag} {block:Caption}
+          <div class="caption">{Caption}</div>
+        {/bock:Caption}
+      </li>
+    {/block:Panorama} {block:Photoset}
+      <li class="post photoset">
+        {Photoset-500}{block:Caption}
+         <div class="caption">{Caption}</div>
+        {/block:Caption}
+      </li>
+    {/blockPhotoset} {block:Quote}
+      <li class="post qoute">
+        "{Qoute}"
+
+        {block:Source}
+        <div class="source">{Source}</div>
+        {/block:Source}
+      </li>
+    {/block:Quote} {block:Link}
+      <li class="post quote">
+        <a href="{URL}" class="link" {Target}>{Name}</a>
+        {block:Description}
+          <div class="description">{Description}</div>
+        {/block:Description}
+      </li>
+    {/block:Link} {block:Chat}
+      <li class="post chat">
+        {block:Title}
+          <h3><a href="{Permalink}">{Title}</a></h3>
+        {/block:Title}
+
+        <ul class="chat">
+          {block:Lines}
+            <li class="{Alt} user_{UserNumber}">
+              {block:Label}
+                <span class="label">{Label}</span>
+              {/block:Label}{Line}
+            </li>
+          {/block:Lines}
+        </ul>
+      </li>
+    {/block:Chat}{block:Video}
+      <li class="post video">
+        {Video-500}{block:Caption}
+          <div class="caption">{Caption}</div>
+        {/block:Caption}
+      </li>
+    {/block:Video} {block:Audio}
+      <li class="post audio">
+        {AudioEmbed} {block:Caption}
+          <div class="caption">{Caption}</div>
+        {/block:Caption}
+      </li>
+    {/block:Audio} {block:Answer}
+      <li class="post answer">
+        <div class="note-item note-item-asker">
+          <div class="text">
+            <p class="asker"><strong>{Asker}</strong> answered:</p>
+            <div class="asker-question">
+              {Question}
+            </div>
+          </div>
+          <div class="avatar">
+            <img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt="">
+          </div>
+        </div>
+      </li>
+    {/block:Answer} {/block:Posts}
+  </ul>
+  <!--The End of the Post-Apocalypse-->
+  <p id="footer">
+    {block:PreviousPage}
+      <a href="{PreviousPage}">&#171; Previous</a>
+    {/block:PreviousPage} {block:NextPage}
+      <a href="{NextPage}">Next &#187;</a>
+    {/block:NextPage}
+  </p>
+</body>
+</html>
